@@ -28,7 +28,7 @@ export function Feedback(props) {
   );
 }
 
-export const mapStateToProps = state => ({
+const mapStateToProps = state => ({
     guessCount: state.guesses.length,
     feedback: state.feedback
 });
