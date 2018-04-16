@@ -13,7 +13,12 @@ export const reducer = (state=initialState, action) => {
         guess = Number(guess);
 
         if(guess === 'NaN') {
-            throw new Error('Must enter a valid number');
+            feedback = 'Please enter a valid number.';
+
+            return Object.assign({}, state, {
+                feedback,
+                guesses: [...state.guesses, guess]
+            });
         }
 
         const difference = Math.abs(guess - this.state.correctAnswer);
